@@ -39,38 +39,26 @@ vidaflow_api/
 
 ---
 
-# Instalação
+# Requisitos
 
-## 1. Clonar projeto
+- Python instalado
+- Pip instalado
+
+Verificar versões:
 
 ```bash
-git clone URL_DO_REPOSITORIO
+python --version
+pip --version
 ```
-
-ou apenas copiar a pasta do projeto.
 
 ---
 
-## 2. Entrar na pasta
+# Instalação
+
+## 1. Entrar na pasta do projeto
 
 ```bash
 cd vidaflow_api
-```
-
----
-
-# Ambiente Virtual (Opcional)
-
-## Windows
-
-```powershell
-python -m venv venv
-```
-
-Ativar:
-
-```powershell
-venv\Scripts\activate
 ```
 
 ---
@@ -97,11 +85,19 @@ http://127.0.0.1:5000
 
 ---
 
-# Criar Banco de Dados
+# Banco de Dados
 
-O projeto cria automaticamente as tabelas ao iniciar.
+O projeto utiliza SQLite.
 
-Caso necessário apagar tudo:
+O banco é criado automaticamente ao iniciar a API.
+
+Arquivo:
+
+```txt
+instance/database.db
+```
+
+Caso queira resetar o banco:
 
 1. Delete:
 
@@ -129,6 +125,12 @@ python run.py
 /v1/status
 ```
 
+### URL completa
+
+```txt
+http://127.0.0.1:5000/v1/status
+```
+
 ### Resposta
 
 ```json
@@ -145,6 +147,12 @@ python run.py
 
 ```http
 /v1/users
+```
+
+### URL completa
+
+```txt
+http://127.0.0.1:5000/v1/users
 ```
 
 ### Body
@@ -175,6 +183,12 @@ python run.py
 /v1/login
 ```
 
+### URL completa
+
+```txt
+http://127.0.0.1:5000/v1/login
+```
+
 ### Body
 
 ```json
@@ -194,22 +208,9 @@ python run.py
 
 ---
 
-# Rotas Futuras
-
-- CRUD de tarefas
-- Upload de imagem
-- Refresh token
-- Recuperação de senha
-- Sistema de permissões
-- Notificações
-- Logs
-- Dashboard admin
-
----
-
 # Testes
 
-Recomendado usar:
+Recomendado utilizar:
 
 - Postman
 - Insomnia
@@ -218,23 +219,41 @@ Recomendado usar:
 
 # Possíveis Erros
 
+---
+
 ## 404 NOT FOUND
 
-Você provavelmente usou URL errada.
+Você provavelmente usou a URL errada.
 
-Exemplo correto:
+Exemplo ERRADO:
 
 ```txt
-http://127.0.0.1:5000/v1/status
+http://127.0.0.1:5000/users
+```
+
+Exemplo CERTO:
+
+```txt
+http://127.0.0.1:5000/v1/users
 ```
 
 ---
 
 ## no such table
 
-O banco ainda não foi criado.
+O banco ainda não foi criado corretamente.
 
 Solução:
+
+1. Feche o servidor
+
+2. Delete:
+
+```txt
+instance/database.db
+```
+
+3. Rode novamente:
 
 ```bash
 python run.py
@@ -261,6 +280,7 @@ Este projeto serve para treinamento de:
 - JWT Authentication
 - Arquitetura Flask
 - Integração Mobile
+- Backend para aplicações React Native
 - WorldSkills Mobile Application Development
 
 ---
