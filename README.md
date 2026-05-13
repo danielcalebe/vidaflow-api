@@ -221,23 +221,6 @@ Recomendado utilizar:
 
 ---
 
-## 404 NOT FOUND
-
-Você provavelmente usou a URL errada.
-
-Exemplo ERRADO:
-
-```txt
-http://127.0.0.1:5000/users
-```
-
-Exemplo CERTO:
-
-```txt
-http://127.0.0.1:5000/v1/users
-```
-
----
 
 ## no such table
 
@@ -259,15 +242,6 @@ instance/database.db
 python run.py
 ```
 
----
-
-## ImportError
-
-Verifique:
-
-- nomes dos arquivos
-- imports
-- __init__.py nas pastas
 
 ---
 
